@@ -9,8 +9,12 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Stories @yield('title')</title>
-
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> --}}
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  <style>
+    body{font-family: Montserrat}
+  </style>
   @yield('styles')
 </head>
 <body>
@@ -20,7 +24,7 @@
 
   @include('shared.footer')
 
-  <script language="javascript" type="text/javascript" src="/js/app.js"></script>
+  <script language="javascript" type="text/javascript" src="{{asset('js/app.js')}}"></script>
   @yield('scripts')
 </body>
 </html>

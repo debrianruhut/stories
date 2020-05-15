@@ -11,7 +11,7 @@
 @endif
 
 <div class="col-md-12">
-    <form action="/stories{{isset($story)?"/{$story->id}":''}}" method="post" class="form-horizontal">
+    <form action="{{url('/stories')}}{{isset($story)?"/{$story->id}":''}}" method="post" class="form-horizontal">
         {{csrf_field()}}
         <div class="form-group">
             <label for="title" class="control-label">Title</label>

@@ -13,7 +13,7 @@
     <ul class="list-group">
         @foreach($stories as $story)
             <li class="list-group-item">
-                <a href="/stories/{{$story->slug}}">{{$story->title}}</a>
+                <a href="{{url('/stories')}}/{{$story->slug}}">{{$story->title}}</a>
 
                 <span class="pull-right">
                     <?php $vote = (int)$story->upvote_count - (int)$story->downvote_count; ?>
@@ -23,7 +23,7 @@
                     &nbsp;
                     @if(count($story->comments))
                         <span class="label label-primary">
-                            <a href="/stories/{{$story->slug}}#comments" style="color: #fff">({{count($story->comments)}} {{ count($story->comments) > 1 ? 'comments' : 'comment' }} )</a>
+                            <a href="{{url('/stories')}}/{{$story->slug}}#comments" style="color: #fff">({{count($story->comments)}} {{ count($story->comments) > 1 ? 'comments' : 'comment' }} )</a>
                         </span>
                     @endif
                     &nbsp;

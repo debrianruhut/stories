@@ -5,7 +5,7 @@
     <article class="story">
       <header>
         <h3>
-          <a href="{{$story->url ? $story->url : "/stories/{$story->slug}"}}" @if($story->url) target="_blank" @endif>
+          <a href="{{$story->url ? $story->url : "../stories/{$story->slug}"}}" @if($story->url) target="_blank" @endif>
             {{$story->title}}
           </a>
         </h3>
@@ -14,7 +14,7 @@
       <div class="info">
         Posted {{$story->created_at->diffForHumans()}}
         @if($story->user_id)
-          by <a href="/user/{{$story->user->slug}}">{{$story->user->name}}</a>
+          by <a href="{{url('/user')}}/{{$story->user->slug}}">{{$story->user->name}}</a>
         @endif
       </div>
 
@@ -48,7 +48,7 @@
 
           @else
 
-            <a href="/login" class="btn btn-default">Sign in for voting</a>
+            <a href="{{url('/login')}}" class="btn btn-default">Sign in for voting</a>
 
           @endif
 
@@ -58,7 +58,7 @@
 
     <hr />
 
-    <h3 id="comments">Comment/s ({{$story->comments->count()}})</h3>
+    <h3 id="comments">Comments ({{$story->comments->count()}})</h3>
 
     @if (session('success'))
       <div class="alert alert-success">
@@ -77,7 +77,7 @@
         <div class="comment-wrap">
           <div class="comment-block">
 
-            <form action="/stories/{{$story->slug}}/comments" method="post" class="form-horizontal">
+            <form action="{{url('/stories')}}/{{$story->slug}}/comments" method="post" class="form-horizontal">
               {{csrf_field()}}
               <input type="hidden" name="story_id" value="{{$story->id}}">
 

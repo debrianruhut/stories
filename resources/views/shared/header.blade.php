@@ -8,15 +8,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Stories</a>
+            <a class="navbar-brand" href="{{url('/')}}">Stories</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">/home</a></li>
-                <li><a href="/help">/help</a></li>
+            <li class="active"><a href="{{url('/')}}">/home</a></li>
+                <li><a href="{{url('/help')}}">/help</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/stories/create">/new story</a></li>
+                <li><a href="{{url('/stories/create')}}">/new story</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         @if(auth()->user())
@@ -27,12 +27,12 @@
                     </a>
                     <ul class="dropdown-menu">
                         @if(auth()->user())
-                            <li><a href="/user/{{auth()->user()->slug}}">/my-stories</a></li>
-                            <li><a href="/user/{{auth()->user()->slug}}/votes">/votes</a></li>
+                            <li><a href="{{url('/user')}}/{{auth()->user()->slug}}">/my-stories</a></li>
+                            <li><a href="{{url('/user')}}/{{auth()->user()->slug}}/votes">/votes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/logout">/logout</a></li>
+                            <li><a href="{{url('/logout')}}">/logout</a></li>
                         @else
-                            <li><a href="/login">/login</a></li>
+                            <li><a href="{{url('/login')}}">/login</a></li>
                         @endif
                     </ul>
                 </li>
