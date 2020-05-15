@@ -2,7 +2,7 @@
 
 [![https://travis-ci.org/muratbsts/stories.svg?branch=master](https://travis-ci.org/muratbsts/stories.svg?branch=master)](https://travis-ci.org/muratbsts/stories)
 
-Story sharing platform made with Laravel 5.7
+Story sharing platform made with Laravel 5.8 (Upgraded)
 
 ## How to contribute
 
@@ -12,7 +12,7 @@ Look at the [trello board](https://trello.com/b/SOpyHA6t/stories) before you [fo
 $ git clone git@github.com:USERNAME/stories && cd stories
 $ cp .env.example .env # and set up your environment
 $ composer install
-$ yarn install # or npm install
+$ yarn install # or npm install or composer install
 $ php artisan key:generate
 ```
 
